@@ -110,20 +110,7 @@ Here are the tasks `Florence-2` could perform:
 <details>
 <summary> Click to expand </summary>
 
-### OCR 
 
-```python
-prompt = "<OCR>"
-run_example(prompt)
-```
-
-### OCR with Region
-OCR with region output format:
-{'\<OCR_WITH_REGION>': {'quad_boxes': [[x1, y1, x2, y2, x3, y3, x4, y4], ...], 'labels': ['text1', ...]}}
-```python
-prompt = "<OCR_WITH_REGION>"
-run_example(prompt)
-```
 
 ### Caption
 ```python
@@ -141,6 +128,16 @@ run_example(prompt)
 ```python
 prompt = "<MORE_DETAILED_CAPTION>"
 run_example(prompt)
+```
+
+### Caption to Phrase Grounding 
+caption to phrase grounding task requires additional text input, i.e. caption. 
+
+Caption to phrase grounding results format: 
+{'\<CAPTION_TO_PHRASE_GROUNDING>': {'bboxes': [[x1, y1, x2, y2], ...], 'labels': ['', '', ...]}}
+```python
+task_prompt = "<CAPTION_TO_PHRASE_GROUNDING>"
+results = run_example(task_prompt, text_input="A green car parked in front of a yellow building.")
 ```
 
 ### Object Detection
@@ -172,14 +169,19 @@ prompt = "<REGION_PROPOSAL>"
 run_example(prompt)
 ```
 
-### Caption to Phrase Grounding 
-caption to phrase grounding task requires additional text input, i.e. caption. 
+### OCR 
 
-Caption to phrase grounding results format: 
-{'\<CAPTION_TO_PHRASE_GROUNDING>': {'bboxes': [[x1, y1, x2, y2], ...], 'labels': ['', '', ...]}}
 ```python
-task_prompt = "<CAPTION_TO_PHRASE_GROUNDING>"
-results = run_example(task_prompt, text_input="A green car parked in front of a yellow building.")
+prompt = "<OCR>"
+run_example(prompt)
+```
+
+### OCR with Region
+OCR with region output format:
+{'\<OCR_WITH_REGION>': {'quad_boxes': [[x1, y1, x2, y2, x3, y3, x4, y4], ...], 'labels': ['text1', ...]}}
+```python
+prompt = "<OCR_WITH_REGION>"
+run_example(prompt)
 ```
 
 for More detailed examples, please refer to [notebook](https://huggingface.co/microsoft/Florence-2-large/blob/main/sample_inference.ipynb)
