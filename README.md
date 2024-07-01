@@ -1,8 +1,7 @@
 ---
 license: mit
 license_link: https://huggingface.co/microsoft/Florence-2-large/resolve/main/LICENSE
-
-pipeline_tag: image-to-text
+pipeline_tag: image-text-to-text
 tags:
 - vision
 ---
